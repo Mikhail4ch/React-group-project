@@ -32,7 +32,25 @@ function App() {
          <figure>
              <figcaption>The photo of me from 2022</figcaption>  
          </figure>
-         <p> If you have some questions or you just wanna contact me be free! I will answer ASAP</p>   
+         <p> If you have some questions or you just wanna contact me be free! I will answer ASAP</p> 
+         <footer>
+     <h3>Way to contact:</h3>
+     <form>
+        <label for="name" > Your name:</label>
+        <input type="text" id="name" name="name" required/><br/>
+
+        <label for="email"> Your email:</label>
+        <input type="email" id="email" name="email" required/><br/>
+
+        <label for="comments"> Space for your comments:</label>
+        <input type="comments" id="comments" name="comments" required/><br/>
+
+        <button type="submit">Submit</button>
+        <p>
+        <a id="links" href="#core">Back to the main content</a> 
+        </p>
+     </form>
+ </footer>         
 </div>
   );
 }
