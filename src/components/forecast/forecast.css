@@ -1,0 +1,30 @@
+.title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .daily-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .icon-mini {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .day {
+    font-weight: bold;
+  }
+  
+  .description {
+    color: #555;
+  }
+  
+  .min-max {
+    font-weight: bold;
+  }

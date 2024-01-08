@@ -1,57 +1,40 @@
 import './App.css';
+import Search from './components/search/search';
+import CurrentWeather from './components/current-weather/current-weather';
+import { WEATHER_API_URL, WEATHER_API_KEY } from './api';
+import { useState } from 'react';
+import Forecast from './components/forecast/forecast';
+
 
 function App() {
+  const [currentWeather, setCurrentWeather] = useState(null);
+  const [forecast, setForecast] = useState(null);
+
+  const handleOnSearchChange = (searchData) => {
+    const [lat, lon] = searchData.value.split(" ");
+
+    const currentWeatherFetch = fetch(`${WEATHER_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`);
+    const forecastFetch = fetch(`${WEATHER_API_URL}/forecast?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`);
+
+    Promise.all([currentWeatherFetch, forecastFetch])
+      .then(async (response) => {
+        const weatherResponse = await response[0].json();
+        const forecastResponse = await response[1].json();
+
+        setCurrentWeather({ city: searchData.label, ...weatherResponse });
+        setForecast({ city: searchData.label, ...forecastResponse });
+      })
+      .catch((err) => console.log(err));
+  }
+  console.log(currentWeather)
+  console.log(forecast)
+
   return (
-  <div className="App">
-    <header>
-         <h2> Representation </h2>
-        <p> My name is Mikhail Makarevich and I have a <span>Github profile</span> that you can check using the link below</p>
-     <nav> 
-        <ul>
-             <li> <a href="https://github.com/Mikhail4ch" id="links"> My profile </a> </li>
-             <li> <a href="#photo" id="links"> The photo of me </a> </li>
-        </ul>
-     </nav>
-    </header>
-    <h3> Current location </h3>
-         <p>I've been living in Norway for last two years, but before I moved here I'd lived in the northern part of Russia </p>
-         <aside>
-         <details>
-             <summary>Guess my age</summary>
-             <p id="links"> I am 20 years old</p>
-         </details>
-         </aside>
-         <h3> Hobbies and own interests</h3>
-          <ul class="container">
-             <li> Making music in Fl Studio </li>
-             <li> Exploration and speculations on crypto market</li>
-             <li> Reading the works of famous sociologists and philosophers</li>
-             <li> Gym at least two times in a week</li>
-         </ul>
-         <img src="../Mee.png" alt=''/> 
-         <figure>
-             <figcaption>The photo of me from 2022</figcaption>  
-         </figure>
-         <p> If you have some questions or you just wanna contact me be free! I will answer ASAP</p> 
-         <footer>
-     <h3>Way to contact:</h3>
-     <form>
-        <label for="name" > Your name:</label>
-        <input type="text" id="name" name="name" required/><br/>
-
-        <label for="email"> Your email:</label>
-        <input type="email" id="email" name="email" required/><br/>
-
-        <label for="comments"> Space for your comments:</label>
-        <input type="comments" id="comments" name="comments" required/><br/>
-
-        <button type="submit">Submit</button>
-        <p>
-        <a id="links" href="#core">Back to the main content</a> 
-        </p>
-     </form>
- </footer>         
-</div>
+    <div className="container">
+      <Search onSearchChange={handleOnSearchChange} />
+      {currentWeather && <CurrentWeather data={currentWeather} />}
+      {forecast && <Forecast data={forecast}/>}
+    </div>
   );
 }
 
