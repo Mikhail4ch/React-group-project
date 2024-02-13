@@ -6,6 +6,7 @@ import { useState } from 'react';
 import Forecast from './components/forecast/forecast';
 
 
+
 function App() {
   const [currentWeather, setCurrentWeather] = useState(null);
   const [forecast, setForecast] = useState(null);
@@ -28,6 +29,7 @@ function App() {
   }
   console.log(currentWeather)
   console.log(forecast)
+
 
   return (
     <div className="container">
