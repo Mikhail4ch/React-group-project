@@ -1,10 +1,16 @@
-const Main = () => {
-    return (
-      <>
-      <p> Sign in </p>
-      <p> Sign up </p>
-      </>
-    );
-  }
+import "./mainPage.css"
+import { Link } from "react-router-dom";
 
-  export default Main 
+const Main = () => {
+  return (
+    <>
+      <div className="main">
+        <h3> Main page </h3>
+        <Link to='/SignIn'> Sign in </Link>
+        <Link to='/SignUp'> Sign up </Link>
+      </div>
+    </>
+  );
+}
+
+export default Main 
