@@ -7,7 +7,12 @@ import Main from './components/mainPage/mainPage';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+
+
+
 root.render(
   <React.StrictMode>
       <BrowserRouter>
