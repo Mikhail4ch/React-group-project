@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import "./Login.css"
-import { useState} from "react";
-import {useNavigate} from 'react-router-dom'
+import { useState } from "react";
+import { useNavigate } from 'react-router-dom'
 
-const Login = ({handleLogin}) => {
+const Login = ({ handleLogin, handleAuth }) => {
 
     const [itemEmail, setItemEmail] = useState("");
     const [itemPassword, setItemPassword] = useState("");
@@ -19,8 +19,11 @@ const Login = ({handleLogin}) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         event.target.reset();
-        handleLogin(itemEmail,itemPassword)
-        navigate('/')
+        handleLogin(itemEmail, itemPassword)
+    }
+
+    if (handleAuth) {
+        navigate('/app')
     }
 
 
