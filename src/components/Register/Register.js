@@ -1,42 +1,34 @@
 import { Link } from "react-router-dom";
-import { useState, useEffect} from "react"
+import { useState} from "react"
 import "./Register.css"
-import connection from "../connection/connection";
 
-const Register = () => {
+
+const Register = ({handleRegister}) => {
     const [itemEmail, setItemEmail] = useState("");
     const [itemPassword, setItemPassword] = useState("");
 
 
     const handleEmail = (event) => {
-        setItemEmail (event.target.value)
+        setItemEmail(event.target.value)
     }
 
     const handlePassword = (event) => {
-        setItemPassword (event.target.value)
+        setItemPassword(event.target.value)
     }
 
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        event.target.reset();
+       handleRegister (itemEmail,itemPassword)
     }
 
-    const createUser = async(itemEmail,itemPassword) => {
-        try {
-            const response = await connection.post('/user/register', {email: itemEmail, password: itemPassword})
-            console.log(response.data)
-            
-        } catch (error) {
-            console.log(error.message)
-        }
-      }
+   
+    
 
-      useEffect(() => {
-        createUser(itemEmail,itemPassword)
-    },[itemEmail,itemPassword])
 
-    return (  
-      <>
+    return (
+        <>
             <div className="Register">
                 <h3> Registration page </h3>
                 <Link to='/'> Move back </Link>
@@ -50,6 +42,6 @@ const Register = () => {
             </div>
         </>
     );
-  }
+}
 
-  export default Register 
+export default Register 
