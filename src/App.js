@@ -31,8 +31,11 @@ function App() {
   const validateUser = async (itemEmail, itemPassword) => {
     try {
         const response = await connection.post('/user/login', { email: itemEmail, password: itemPassword })
-        setAuth(response.data)
-        console.log(response.data)
+        setAuth(response.status)
+        console.log(response.status)
+        if (response.status) {
+          alert ("Enjoy the app!")
+        }
    
     } catch (error) {
         console.log(error.message)
