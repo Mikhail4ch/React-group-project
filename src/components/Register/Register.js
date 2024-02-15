@@ -33,9 +33,9 @@ const Register = ({handleRegister}) => {
                 <h3> Registration page </h3>
                 <Link to='/'> Move back </Link>
                 <form onSubmit={handleSubmit}>
-                    <label for="eml2">Email</label>
+                    <label htmlFor="eml2">Email</label>
                     <input placeholder="Enter your email" type="email" id="eml2" onChange={handleEmail} />
-                    <label for="pssw2">Password</label>
+                    <label htmlFor="pssw2">Password</label>
                     <input placeholder="Enter your password" type="password" id="pssw2" onChange={handlePassword} />
                     <button type="submit"> Create </button>
                 </form>

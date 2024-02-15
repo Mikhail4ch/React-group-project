@@ -8,29 +8,33 @@ import { useEffect } from "react";
 import connection from "./components/connection/connection";
 
 
-
 function App() {
+
+
 
   const createUser = async (itemEmail, itemPassword) => {
     try {
       const response = await connection.post('/user/register', { email: itemEmail, password: itemPassword })
       console.log(response.data);
-  
-
+      if (response.data) {
+        alert ("Account was successfuly created !")
+      }
     } catch (error) {
       console.log(error.message);
-
     }
   }
 
   useEffect(() => {
     createUser()
   }, [])
-
+ 
   const validateUser = async (itemEmail, itemPassword) => {
     try {
         const response = await connection.post('/user/login', { email: itemEmail, password: itemPassword })
         console.log(response.data)
+        if (response.data) {
+          alert ("Logged in congrats :)")
+        }
 
     } catch (error) {
         console.log(error.message)
