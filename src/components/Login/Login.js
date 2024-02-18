@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./Login.css"
+import "./Login.css";
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom'
 
@@ -16,6 +16,7 @@ const Login = ({ handleLogin, handleAuth }) => {
     const handlePassword = (event) => {
         setItemPassword(event.target.value)
     }
+
     const handleSubmit = (event) => {
         event.preventDefault();
         event.target.reset();
@@ -30,18 +31,18 @@ const Login = ({ handleLogin, handleAuth }) => {
     return (
         <>
             <div className="Login">
-                <h3> Login page </h3>
-                <Link to='/'> Move back </Link>
+                <h3>Login page</h3>
+                <Link to='/'>Move back</Link>
                 <form onSubmit={handleSubmit}>
                     <label htmlFor="eml1">Email</label>
                     <input placeholder="Enter your email" type="email" id="eml1" onChange={handleEmail} />
                     <label htmlFor="pssw1">Password</label>
                     <input placeholder="Enter your password" type="password" id="pssw1" onChange={handlePassword} />
-                    <button type="submit"> Submit </button>
+                    <button type="submit">Submit</button>
                 </form>
             </div>
         </>
     );
 }
 
-export default Login 
+export default Login; 
