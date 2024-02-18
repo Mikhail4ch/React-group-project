@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import "./Register.css";
+import { useState } from "react"
+import "./Register.css"
 
 
 const Register = ({ handleRegister }) => {
