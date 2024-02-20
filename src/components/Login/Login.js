@@ -30,7 +30,9 @@ const Login = ({ handleLogin}) => {
         <>
             <div className="Login">
                 <h3>Login page</h3>
+
                 <Link to='/getAccess'>Move back</Link>
+
                 <form onSubmit={handleSubmit}>
                     <label htmlFor="eml1">Email</label>
                     <input placeholder="Enter your email" type="email" id="eml1" onChange={handleEmail} />
@@ -43,4 +45,8 @@ const Login = ({ handleLogin}) => {
     );
 }
 
+
 export default Login;
+
+
+
