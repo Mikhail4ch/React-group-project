@@ -10,7 +10,7 @@ import connection from "./components/connection/connection";
 import Layout from "./components/Layout";
 import Missing from "./components/Missing";
 import { useNavigate} from 'react-router-dom';
-
+import Access from "./components/mainPage/access";
 
 
 
@@ -19,10 +19,6 @@ function App() {
   const { setAuth } = useAuth();
   const navigate = useNavigate();
  
-  
- 
-
-
   const createUser = async (itemEmail, itemPassword) => {
     try {
       const response = await connection.post('/user/register', { email: itemEmail, password: itemPassword })
@@ -53,7 +49,7 @@ function App() {
       if (response.status) {
         alert("Enjoy the app!")
       }
-      navigate('/');
+      navigate('/App');
      
     } catch (error) {
       console.log(error.message)
@@ -67,12 +63,13 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         {/* public routes */}
-        <Route path="/getAccess" element={<Main />} />
+        <Route path="/" element={<Main />} />
+        <Route path="/getAccess" element={<Access />} />
         <Route path="/SignIn" element={<Login handleLogin={validateUser} />} />
         <Route path="/SignUp" element={<Register handleRegister={createUser} />} />
         {/* protected route */}
         <Route element={<RequireAuth />}>
-          <Route path="/" element={<WeatherApp />} />
+          <Route path="/App" element={<WeatherApp />} />
         </Route>
         {/* catch all */}
         <Route path="*" element={<Missing />} />
