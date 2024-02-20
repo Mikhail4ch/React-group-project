@@ -4,6 +4,7 @@ import CurrentWeather from './components/current-weather/current-weather';
 import { WEATHER_API_URL, WEATHER_API_KEY } from './api';
 import { useState } from 'react';
 import Forecast from './components/forecast/forecast';
+import { Link } from "react-router-dom";
 
 
 
@@ -30,16 +31,21 @@ function WeatherApp() {
   console.log(currentWeather)
   console.log(forecast)
 
-  
+
 
 
   return (
-    <div className="container">
-      <Search onSearchChange={handleOnSearchChange} />
-      {currentWeather && <CurrentWeather data={currentWeather} />}
-      {forecast && <Forecast data={forecast}/>}
-    </div>
+    <>
+      <div className='back'>
+        <h3> <Link to='/'>Go Back</Link> </h3>
+      </div>
+      <div className="container">
+        <Search onSearchChange={handleOnSearchChange} />
+        {currentWeather && <CurrentWeather data={currentWeather} />}
+        {forecast && <Forecast data={forecast} />}
+      </div>
+    </>
   );
 }
 
-export default  WeatherApp;
+export default WeatherApp;

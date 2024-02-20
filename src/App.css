@@ -2,3 +2,21 @@
   width: 50%;
   margin: 20px auto;
 }
+
+.back a {
+  display: block;
+  margin-top: -15px;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  padding: 6px;
+  background-color: #a0e9da;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  width: 7%;
+  float: right;
+}
+
+.back a:hover {
+  background-color: #0d84c4;
+}
