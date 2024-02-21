@@ -12,17 +12,23 @@
     color: #333;
   }
   
-  .main a {
-    display: block;
-    margin-top: 15px;
-    text-align: center;
-    color: #fff;
-    text-decoration: none;
-    padding: 10px;
-    background-color: #4caf50;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-  }
+  
+    .main a {
+      display: block;
+      margin-top: 15px;
+      text-align: center;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px;
+      background-color: #4caf50;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+
+    .main .weather-app a {
+      background-color: #00d4b8;
+    }
+  
   
   .main a:hover {
     background-color: #45a049;

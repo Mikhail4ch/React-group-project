@@ -8,7 +8,7 @@ const Main = () => {
 
         <h3>Homepage</h3>
 
-        <h3> <Link to='/App'>Weather app</Link> </h3>
+        <h3 className="weather-app"> <Link to='/App'>Weather app</Link> </h3>
 
      
       </div>
