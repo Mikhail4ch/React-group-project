@@ -6,9 +6,9 @@ const Main = () => {
     <>
       <div className="main">
 
-        <h2>Homepage</h2>
+        <h3>Homepage</h3>
 
-        <h3> <Link to='/'>Weather app</Link> </h3>
+        <h3>Main page</h3>
 
         <Link to='/SignIn'>Sign in</Link>
         <Link to='/SignUp'>Sign up</Link>
