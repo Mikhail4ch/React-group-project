@@ -7,7 +7,7 @@
     background-color: #fff;
   }
   
-  .main h3 {
+  .main h3, .main h2 {
     text-align: center;
     color: #333;
   }
@@ -23,7 +23,12 @@
     border-radius: 4px;
     transition: background-color 0.3s;
   }
+
+  .main .weather-app a {
+    background-color: #00d4b8;
+  }
   
-  .main a:hover {
+  .main a:hover, .main .weather-app a:hover {
     background-color: #45a049;
   }
+  
