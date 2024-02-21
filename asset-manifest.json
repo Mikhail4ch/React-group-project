@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/node-first-step/static/css/main.67b58248.css",
+    "main.js": "/node-first-step/static/js/main.9456f8d6.js",
+    "index.html": "/node-first-step/index.html",
+    "main.67b58248.css.map": "/node-first-step/static/css/main.67b58248.css.map",
+    "main.9456f8d6.js.map": "/node-first-step/static/js/main.9456f8d6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.67b58248.css",
+    "static/js/main.9456f8d6.js"
+  ]
+}
