@@ -7,10 +7,10 @@ import Forecast from './components/forecast/forecast';
 import { Link } from "react-router-dom";
 
 
-
 function WeatherApp() {
   const [currentWeather, setCurrentWeather] = useState(null);
   const [forecast, setForecast] = useState(null);
+  
 
   const handleOnSearchChange = (searchData) => {
     const [lat, lon] = searchData.value.split(" ");
@@ -30,8 +30,6 @@ function WeatherApp() {
   }
   console.log(currentWeather)
   console.log(forecast)
-
-
 
 
   return (
