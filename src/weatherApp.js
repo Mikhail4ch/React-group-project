@@ -35,7 +35,7 @@ function WeatherApp() {
   return (
     <>
       <div className='back'>
-        <h3> <Link to='/React-group-project'>Go Back</Link> </h3>
+        <h3> <Link to='/'>Go Back</Link> </h3>
       </div>
       <div className="container">
         <Search onSearchChange={handleOnSearchChange} />

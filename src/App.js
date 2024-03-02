@@ -61,7 +61,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         {/* public routes */}
-        <Route path="/React-group-project" element={<Main />} />
+        <Route path="/" element={<Main />} />
         <Route path="/getAccess" element={<Access />} />
         <Route path="/SignIn" element={<Login handleLogin={validateUser} />} />
         <Route path="/SignUp" element={<Register handleRegister={createUser} />} />
