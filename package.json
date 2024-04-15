@@ -26,6 +26,10 @@
 
     "react-scripts": "5.0.1",
 
+    "react-select": "^5.8.0",
+
+    "react-select-async-paginate": "^0.7.3",
+
     "web-vitals": "^2.1.4"
 
   },
