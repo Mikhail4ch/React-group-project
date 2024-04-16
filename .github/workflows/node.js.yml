@@ -35,6 +35,9 @@ jobs:
 
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        slug: Mikhail4ch/React-group-project
 
     - name: Build
       run: npm run build
