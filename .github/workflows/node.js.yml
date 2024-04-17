@@ -35,6 +35,22 @@ jobs:
 
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        slug: Mikhail4ch/React-group-project
 
     - name: Build
       run: npm run build
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+     - uses: actions/checkout@v3
+     - uses: everlytic/branch-merge@1.1.5
+       with:
+         github_token: ${{ secrets.GITHUB_TOKEN }}
+         source_ref: ${{ github.ref }}
+         target_branch: 'production'
+         commit_message_template: '[Automated] Merged {source_ref} into target {target_branch}'   
