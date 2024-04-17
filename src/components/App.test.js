@@ -4,7 +4,7 @@ import { render, screen } from '@testing-library/react'
 test ('Testing spans in current-weather component', () => {
   render(<CurrentWeather/>);
 
-  const element = screen.getByText(/details/i);
+  const element = screen.getBySpanText(/details/i);
 
   expect(element).toBeInTheDocument();
 })
