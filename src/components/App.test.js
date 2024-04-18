@@ -1,6 +1,7 @@
 import CurrentWeather from "./current-weather/current-weather";
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom'
+import '@testing-library/jest-dom';
+
 
 const mockData = {
   "city": "Oslo",
@@ -21,10 +22,16 @@ const mockData = {
   }
   };
 
-test ('Testing span in current-weather component', () => {
+test ('Testing spans in current-weather component', () => {
   render(<CurrentWeather data = {mockData}/>)
   expect(screen.getByText(/Details/)).toBeInTheDocument();
+  expect(screen.getByText(/Feels like/)).toBeInTheDocument();
+  expect(screen.getByText(/%/)).toBeInTheDocument();
+  expect(screen.getByText(/hPa/)).toBeInTheDocument();
+  expect(screen.getAllByText(/°C/)).toBeTruthy();
 })
+
+
 
 
 test('renders learn react link', () => {
