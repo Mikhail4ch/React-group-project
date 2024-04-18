@@ -28,7 +28,7 @@ test ('Testing spans in current-weather component', () => {
   expect(screen.getByText(/Feels like/)).toBeInTheDocument();
   expect(screen.getByText(/%/)).toBeInTheDocument();
   expect(screen.getByText(/hPa/)).toBeInTheDocument();
-  expect(screen.getByText(/°C/)).toBeTruthy();
+  expect(screen.getAllByText(/°C/)).toBeTruthy();
 })
 
 
