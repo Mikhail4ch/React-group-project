@@ -25,9 +25,14 @@ const mockData = {
 test ('Testing spans in current-weather component', () => {
   render(<CurrentWeather data = {mockData}/>)
   expect(screen.getByText(/Details/)).toBeInTheDocument();
-  expect(screen.getByText(/Feels like/)).toBeInTheDocument();
-  expect(screen.getByText(/%/)).toBeInTheDocument();
-  expect(screen.getByText(/hPa/)).toBeInTheDocument();
+  
+const spans = ['Details', 'Feels like', '%', 'hPa'];
+
+spans.forEach(span => {
+
+expect(screen.getByText(new RegExp(span, 'i'))).toBeInTheDocument();
+
+});
   expect(screen.getAllByText(/°C/)).toBeTruthy();
 })
 
