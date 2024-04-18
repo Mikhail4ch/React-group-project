@@ -1,18 +1,24 @@
 import CurrentWeather from "./current-weather/current-weather";
 import { render, screen } from '@testing-library/react'
 
-const mockData = [
+const mockData = {
+  "city": "Oslo",
+  "weather": [
   {
-      "city": "Oslo",
-      "weather[0].description": "overcast clouds",
-      "weather[0].icon": "grey cloud",
-      "main.temp": 15,
-      "main.feels_like": 9,                       
-      "wind.speed": 1,   
-      "main.humidity": 20, 
-      "main.pressure": 1140                   
-    }
-]
+    "description": "overcast clouds",
+    "icon": "grey cloud"
+  }
+  ],
+  "main": {
+  "temp": 15,
+  "feels_like": 9,
+  "humidity": 20,
+  "pressure": 1140
+  },
+  "wind": {
+  "speed": 1
+  }
+  };
 
 test ('Testing span in current-weather component', () => {
   render(<CurrentWeather data = {mockData}/>);
