@@ -23,7 +23,7 @@ const mockData = {
 
 test ('Testing spans in current-weather component', () => {
   render(<CurrentWeather data = {mockData}/>)
-  expect(screen.getByText(/°C Details Feels like Wind % hPa /)).toBeInTheDocument();
+  expect(screen.getByText(/Details/ & /Feels like/ & /°C/ & /%/ & /hPa/)).toBeInTheDocument();
 })
 
 
