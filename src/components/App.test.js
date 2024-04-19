@@ -68,13 +68,13 @@ test('Testing labels in forecast component', async () => {
   
   render(<Forecast data={mockData2} />);
   
-  const AccordionButtons = screen.getAllByRole('button')
+  const AccordionButtons = screen.getAllByRole('AccordionItemButton')
 
   AccordionButtons.forEach(button => {
 
     [fireEvent.click]('http://fireevent.click')(button);
     });
-    
+
   const labels = ['Daily', '°C'];
   labels.forEach(label => {
     expect(screen.getByText(new RegExp(label, 'i'))).toBeInTheDocument();
