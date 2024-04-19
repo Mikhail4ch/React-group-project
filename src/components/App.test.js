@@ -47,13 +47,17 @@ const mockData2 = {
     "temp_min": 5
   },
   "index": 2,
-  "splice": "whatever",
-  
+  "list": [
+    {
+      "splice": "whatever"
+    }
+  ]
+
 };
 
 test('Testing labels in forecast component', () => {
   render(<Forecast data={mockData2} />)
-  const labels = ['Daily', '°C' ];
+  const labels = ['Daily', '°C'];
   labels.forEach(label => {
     expect(screen.getByText(new RegExp(label, 'i'))).toBeInTheDocument();
   });
