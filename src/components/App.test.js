@@ -1,5 +1,5 @@
 import CurrentWeather from "./current-weather/current-weather";
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Forecast from "./forecast/forecast";
 
@@ -36,38 +36,45 @@ test('Testing spans in current-weather component', () => {
 
 // Test for the forecast component using mockData2
 
-const mockData2 = {
+test('Testing labels in forecast component', async () => {
+  
+  const mockData2 = {
+    "item": [
+      {
+        "weather": [
+          {
+            "description": "broken clouds",
+            "icon": "bright cloud"
+          }
+        ],
+        "main": [
+          {
+            "temp_min": 5
+          }
+        ]
+      }
+    ],
+    "index": 2,
+    "list": [
+      {
+        "splice": [
+          {
+            "map": "whatever"
+          }
+        ]
+      }
+    ]
+  };
+  
+  render(<Forecast data={mockData2} />);
+  
+  const AccordionButtons = screen.getAllByRole('button')
 
-  "item": [
-    {
-      "weather": [
-        {
-          "description": "broken clouds",
-          "icon": "bright cloud"
-        }
-      ],
-      "main": [
-        {
-          "temp_min": 5
-        }
-      ]
-    }
-  ],
-  "index": 2,
-  "list": [
-    {
-      "splice": [
-        {
-          "map": "whatever"
-        }
-      ]
-    }
-  ]
+  AccordionButtons.forEach(button => {
 
-};
-
-test('Testing labels in forecast component', () => {
-  render(<Forecast data={mockData2} />)
+    [fireEvent.click]('http://fireevent.click')(button);
+    });
+    
   const labels = ['Daily', '°C'];
   labels.forEach(label => {
     expect(screen.getByText(new RegExp(label, 'i'))).toBeInTheDocument();
