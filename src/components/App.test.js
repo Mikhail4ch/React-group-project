@@ -37,15 +37,22 @@ test('Testing spans in current-weather component', () => {
 // Test for the forecast component using mockData2
 
 const mockData2 = {
-  "weather": [
+
+  "item": [
     {
-      "description": "broken clouds",
-      "icon": "bright cloud"
+      "weather": [
+        {
+          "description": "broken clouds",
+          "icon": "bright cloud"
+        }
+      ],
+      "main": [
+        {
+          "temp_min": 5
+        }
+      ]
     }
   ],
-  "main": {
-    "temp_min": 5
-  },
   "index": 2,
   "list": [
     {
