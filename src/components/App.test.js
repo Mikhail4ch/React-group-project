@@ -46,7 +46,9 @@ const mockData2 = {
   "main": {
     "temp_min": 5
   },
-  "index": 2
+  "index": 2,
+  "splice": "whatever",
+  
 };
 
 test('Testing labels in forecast component', () => {
