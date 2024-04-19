@@ -72,7 +72,7 @@ test('Testing labels in forecast component', async () => {
 
   AccordionButtons.forEach(button => {
 
-    [fireEvent.click]('http://fireevent.click')(button);
+    [fireEvent.click](button);
     });
 
   const labels = ['Daily', '°C'];
