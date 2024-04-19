@@ -68,7 +68,7 @@ const mockData2 = {
 
 test('Testing labels in forecast component', () => {
   render(<Forecast data={mockData2} />)
-  const labels = ['Daily'];
+  const labels = ['Daily', '°C'];
   labels.forEach(label => {
     expect(screen.getByText(new RegExp(label, 'i'))).toBeInTheDocument();
   });
