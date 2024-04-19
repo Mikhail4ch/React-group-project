@@ -68,7 +68,7 @@ test('Testing labels in forecast component', async () => {
   
   render(<Forecast data={mockData2} />);
   
-  const AccordionButtons = screen.getAllByRole('AccordionItemButton')
+  const AccordionButtons = screen.getAllByRole('button')
 
   AccordionButtons.forEach(button => {
 
