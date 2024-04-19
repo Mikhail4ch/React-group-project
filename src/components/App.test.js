@@ -56,7 +56,11 @@ const mockData2 = {
   "index": 2,
   "list": [
     {
-      "splice": "whatever"
+      "splice": [
+        {
+          "map": "whatever"
+        }
+      ]
     }
   ]
 
