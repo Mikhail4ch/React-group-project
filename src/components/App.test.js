@@ -1,7 +1,10 @@
 import CurrentWeather from "./current-weather/current-weather";
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import Forecast from "./forecast/forecast";
 
+
+// Test for the current-weather component using mockData 
 
 const mockData = {
   "city": "Oslo",
@@ -29,6 +32,29 @@ test('Testing spans in current-weather component', () => {
     expect(screen.getByText(new RegExp(span, 'i'))).toBeInTheDocument();
   });
   expect(screen.getAllByText(/°C/)).toBeTruthy();
+})
+
+// Test for the forecast component using mockData2
+
+const mockData2 = {
+  "weather": [
+    {
+      "description": "broken clouds",
+      "icon": "bright cloud"
+    }
+  ],
+  "main": {
+    "temp_min": 5
+  },
+  "index": 2
+};
+
+test('Testing labels in forecast component', () => {
+  render(<Forecast data={mockData2} />)
+  const labels = ['Daily', '°C' ];
+  labels.forEach(label => {
+    expect(screen.getByText(new RegExp(label, 'i'))).toBeInTheDocument();
+  });
 })
 
 
