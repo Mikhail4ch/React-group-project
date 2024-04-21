@@ -71,7 +71,7 @@ test('Testing labels in forecast component', async () => {
   const AccordionButtons = screen.getAllByRole('button')
 
   AccordionButtons.forEach(button => {
-    fireevent.click(button);;
+    fireEvent.click(button);
     });
 
   const labels = ['Daily', '°C'];
