@@ -37,7 +37,7 @@ test('Testing spans in current-weather component', () => {
 // Test for the forecast component using mockData2
 
 test('Testing labels in forecast component', async () => {
-  
+
   const mockData2 = {
     "item": [
       {
@@ -65,22 +65,21 @@ test('Testing labels in forecast component', async () => {
       }
     ]
   };
-  
+
   render(<Forecast data={mockData2} />);
-  
-  const AccordionButtons = screen.getAllByRole('button')
+  const Week_Days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
-  AccordionButtons.forEach(button => {
-    fireEvent.click(button);
-    });
+  for (const day of Week_Days) {
+    const button = await screen.findByText(day);
+    fireEvent.click(button);;
+  }
 
-  const labels = ['Daily', '°C'];
-  labels.forEach(label => {
-    expect(screen.getByText(new RegExp(label, 'i'))).toBeInTheDocument();
-  });
-})
+const labels = ['Daily', '°C'];
 
-
+for (const label of labels) {
+  expect(await screen.findByText(new RegExp(label, 'i'))).toBeInTheDocument();
+  }
+});
 
 
 test('renders learn react link', () => {
