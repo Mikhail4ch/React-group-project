@@ -1,7 +1,8 @@
 import CurrentWeather from "./current-weather/current-weather";
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, userEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Forecast from "./forecast/forecast";
+import Main from "./mainPage/mainPage";
 
 
 // Test for the current-weather component using mockData 
@@ -71,7 +72,7 @@ test('Testing labels in forecast component', async () => {
 
   for (const day of Week_Days) {
     const button = await screen.findByText(day);
-    fireEvent.click(button);;
+    fireEvent.click(button);
   }
 
 const labels = ['Daily', '°C'];
@@ -81,7 +82,20 @@ for (const label of labels) {
   }
 });
 
+// Testing content presence on mainPage
 
-test('renders learn react link', () => {
-  expect(true).toBe(true);
-});
+test ("There h3 on the mainPage", () => {
+  render(<Main/>)
+  const h3 = ["Homepage", "Weather app"];
+  h3.forEach(h => {
+    expect(screen.getByText(new RegExp(h, 'i'))).toBeInTheDocument();
+  });
+})
+
+// Testing interaction on mainPage
+
+test ("testing a click on a link", async () => {
+  render(<Main />)
+  await userEvent.click(screen.getByText(/Weather app/));
+  expect(userEvent).toHaveBeenCalled();
+})
