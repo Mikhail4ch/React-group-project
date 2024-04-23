@@ -1,5 +1,5 @@
 import RequireAuth from "./components/requireAuth";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Main from './components/mainPage/mainPage';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
@@ -57,7 +57,7 @@ function App() {
 
   return (
 
-
+<BrowserRouter>
     <Routes>
       <Route path="/" element={<Layout />}>
         {/* public routes */}
@@ -75,7 +75,7 @@ function App() {
         <Route path="*" element={<Missing />} />
       </Route>
     </Routes>
-
+</BrowserRouter>
 
   );
 }
