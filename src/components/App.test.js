@@ -110,3 +110,18 @@ test ("testing input fields of Register component", async () => {
   expect(screen.getByDisplayValue(new RegExp(input, 'i'))).toBeInTheDocument();
  }
 })
+
+test ("testing button of Register component", async () => {
+  render(<Register/>) 
+  const createButton= screen.getByRole('button', { name: /Create/});
+  expect(createButton).toBeInTheDocument();
+})
+
+test ("testing a click on a Create button", async () => {
+  render(<Register/>)
+  await userEvent.click(screen.getByText(/Create/));
+  expect(userEvent).toHaveBeenCalled();
+})
+
+// Test state updates 
+
