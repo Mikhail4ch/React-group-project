@@ -1,11 +1,12 @@
 import CurrentWeather from "./current-weather/current-weather";
-import { render, screen, fireEvent, userEvent, waitFor } from '@testing-library/react';
+import { render, screen} from '@testing-library/react';
+/*import { render, screen, fireEvent, userEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Forecast from "./forecast/forecast";
 import Main from "./mainPage/mainPage";
 import Register from "./Register/Register";
 import { describe, expect, it } from "vitest";
-import * as services from '../weatherApp'
+import * as services from '../weatherApp'*/
 
 
 
