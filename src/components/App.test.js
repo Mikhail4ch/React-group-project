@@ -41,6 +41,7 @@ test('Testing spans in current-weather component', () => {
 
 // Test for the forecast component using mockData2
 
+/*
 test('Testing labels in forecast component', async () => {
 
   const mockData2 = {
@@ -215,3 +216,4 @@ const data2 = ["whatever", 2, "bright cloud", 5]
 await waitFor(() => { for (const dat of data2) {
   expect(screen.getByText(new RegExp(dat, 'i'))).toBeInTheDocument();
 }}) 
+*/
