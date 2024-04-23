@@ -3,6 +3,7 @@ import { render, screen, fireEvent, userEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Forecast from "./forecast/forecast";
 import Main from "./mainPage/mainPage";
+import Register from "./Register/Register";
 
 
 // Test for the current-weather component using mockData 
@@ -98,4 +99,14 @@ test ("testing a click on a link", async () => {
   render(<Main />)
   await userEvent.click(screen.getByText(/Weather app/));
   expect(userEvent).toHaveBeenCalled();
+})
+
+// Testing Register component 
+
+test ("testing input fields of Register component", async () => {
+  render(<Register/>)
+  const inputValues = ["Enter your email", "Enter your password"];
+ for (const input of inputValues) {
+  expect(screen.getByDisplayValue(new RegExp(input, 'i'))).toBeInTheDocument();
+ }
 })
