@@ -1,5 +1,6 @@
 import CurrentWeather from "./current-weather/current-weather";
 import { render, screen} from '@testing-library/react';
+import '@testing-library/jest-dom';
 /*import { render, screen, fireEvent, userEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Forecast from "./forecast/forecast";
