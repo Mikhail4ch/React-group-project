@@ -8,6 +8,7 @@ import Register from "./Register/Register";
 import { describe, expect, it } from "vitest";*/
 import Forecast from "./forecast/forecast";
 import { services } from '../weatherApp'
+import WeatherApp from "../weatherApp";
 
 
 
@@ -150,7 +151,7 @@ describe("testing state updates of input fields", () => {
 
 // Testing API call in current-weather component 
 
-const mockFetchData = jest.spyOn(services, 'WeatherApp')
+const mockFetchData = jest.spyOn(services, WeatherApp)
   .mockImplementation(async () => {
     return [{
       "city": "Oslo",
@@ -181,7 +182,7 @@ await waitFor(() => { for (const dat of data) {
 
 // Testing API call in forecast component 
 
-const mockFetchData2 = jest.spyOn(services, 'WeatherApp')
+const mockFetchData2 = jest.spyOn(services, WeatherApp)
   .mockImplementation(async () => {
     return [{
       "item": [
