@@ -150,7 +150,7 @@ describe("testing state updates of input fields", () => {
 
 // Testing API call in current-weather component 
 
-const mockFetchData = jest.spyOn(services, 'FetchData')
+const mockFetchData = jest.spyOn(services, 'WeatherApp')
   .mockImplementation(async () => {
     return [{
       "city": "Oslo",
@@ -181,7 +181,7 @@ await waitFor(() => { for (const dat of data) {
 
 // Testing API call in forecast component 
 
-const mockFetchData2 = jest.spyOn(services, 'FetchData')
+const mockFetchData2 = jest.spyOn(services, 'WeatherApp')
   .mockImplementation(async () => {
     return [{
       "item": [
